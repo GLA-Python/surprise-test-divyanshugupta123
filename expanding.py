@@ -1,11 +1,14 @@
 def expanding(lst):
-    a=abs(lst[1]-lst[0])
-    for j in range(2,len(lst)):
-        b=abs(lst[j]-lst[j-1])
+    
+    c=True
+    for j in range(1,len(lst)-1):
+        a=abs(lst[j]-lst[j-1])
+        b=abs(lst[j+1]-lst[j])
         if a<b:
-            return True
+            c=True
         else:
-            return False
+            c= False
+    return c
 a=input('enter the element ').split()
 lst=list(map(int,a))
 print(expanding(lst))
